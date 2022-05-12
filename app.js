@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express');
 const app = express()
-
+cost port = process.env.PORT || 3000
 const puclidir = path.join(__dirname,'./public')
 console.log(puclidir)
 //app.use(express.static(puclidir))
@@ -17,11 +17,11 @@ app.get('/about',(req,resp)=>{
 })
 app.get('/contact',(req,resp)=>{
     resp.send('contact us')
-})
+}) 
 app.get('/val',(req,resp)=>{
     let a={'bharat':'bharat'}
     resp.send(a)
 })
-app.listen(5000,()=>{
+app.listen(port,()=>{
     console.log('server is up on port 5000')
 })
